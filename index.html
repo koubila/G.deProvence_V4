@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>G. de Provence - Le luxe naturel</title>
+    <link rel="icon" type="image/png" href="./logo_fond_blanc_gdeprovence.png">
+</head>
+<body>
+    <!-- Nouveau bandeau -->
+    <header class="main-header">
+        <div class="header-banner">
+            <div class="banner-overlay">
+                <h1>Né de la terre, façonné par la lumière</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/d7312e08-1f9f-49ff-8d07-fd343d63f038" alt="G. de Provence">
+            </div>
+            <div class="mobile-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li>
+                    <a href="#accueil">Accueil</a>
+                </li>
+
+                <li class="has-subnav">
+                    <a href="#gamme">Notre gamme</a>
+                    <div class="subnav">
+                        <a href="#hotels">Hôtels</a>
+                        <a href="#spas">Spas</a>
+                        <a href="#signature-lobby">Signatures</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#engagements">Nos engagements</a>
+                </li>
+                <li>
+                    <a href="#propos">À propos</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <!-- (tout le reste de ton HTML reste identique) -->
+    <!-- ... ton code des sections + footer + script ici ... -->
+
+    <!-- Je ne recolle pas tout pour éviter un pavé, 
+         mais tu peux simplement remplacer ton bloc .hero-banner
+         par le <header> + .header-banner ci-dessus,
+         et supprimer le CSS .hero-banner, .hero-overlay, .hero-content, .hero-tagline, 
+         ainsi que l'effet parallaxe lié à .hero-banner si tu n'en veux plus. -->
+         
+
+    <!-- Section Accueil -->
+    <!-- <section id="accueil">
+        <div class="section-content">
+            <h1>Bienvenue chez G. de Provence</h1>
+            <div class="centered-text">
+                <p>Notre maison est née d'un attachement profond à la région, à ses plantes, à ses artisans, à son art de vivre.</p>
+                <p>Nous proposons des soins et des parfums d'ambiance inspirés du paysage provençal, en alliant ingrédients naturels, savoir-faire local et élégance contemporaine.</p>
+                <p style="font-style: italic; color: var(--lavender); font-size: 1.3rem; margin-top: 40px;">Le luxe naturel</p>
+            </div>
+        </div>
+    </section> -->
+    <!-- Section Accueil -->
+    <section id="accueil">
+        <div class="section-content">
+            <h1>Bienvenue chez G. de Provence</h1>
+
+            <div class="centered-text">
+
+                <p>Il y a, au cœur de la Provence, une lumière particulière.</p>
+
+                <p>
+                    Une lumière qui glisse sur les pierres blanches, qui s’attarde dans les sillons de lavande et qui laisse dans l’air une douceur presque palpable.
+                    C’est dans cet endroit baigné de chaleur et de simplicité que <b>G. de Provence</b> trouve son origine.
+                </p>
+
+                <p>
+                    L’histoire commence dans les petites routes qui serpentent entre les collines, là où les parfums s’entremêlent naturellement : lavande fine, herbes sèches de garrigue, fleurs de figuier chauffées par le soleil.
+                    Ce paysage n’est pas seulement un décor ; c’est un héritage vivant, transmis par les distillateurs, les maîtres savonniers, les cueilleurs et les artisans qui ont façonné la région depuis des générations.
+                </p>
+
+                <p>
+                    <b>G. de Provence</b> est née d’un désir : préserver cette authenticité tout en la réinterprétant avec élégance.
+                    Prendre la main d’un savoir-faire ancien pour le guider vers une esthétique moderne.
+                    Chercher la beauté dans les gestes simples, dans la matière brute, dans la sincérité d’une plante.
+                </p>
+
+                <p>
+                    Ici, chaque ingrédient raconte une histoire.
+                    La lavande, symbole de la région, est récoltée au petit matin pour en préserver la fraîcheur.
+                    Le lait d’ânesse provient de petites fermes respectueuses du rythme animal.
+                    L’amande douce et l’huile d’olive sont des douceurs vertueuses pour la santé et le corps, qui émergent du soleil provençal.
+                    Chaque parfum est le fruit d’une collaboration entre la nature et le talent des nez, héritiers de la tradition grassoise.
+                </p>
+
+                <p>
+                    Mais <b>G. de Provence</b> ne se limite pas à l'authenticité : la marque y ajoute une exigence contemporaine.
+                    Transparence des compositions. Packaging recyclé et noble. Processus maîtrisés.
+                    Un luxe calme, discret, sincère.
+                    Le contraire du superflu.
+                </p>
+
+                <p>
+                    En ouvrant un produit <b>G. de Provence</b>, on ne découvre pas seulement une texture, un parfum, une couleur.
+                    On ouvre une fenêtre sur un territoire.
+                    On ressent la fraîcheur des collines au lever du jour, la pureté d’un vent de mistral, la douceur d’un après-midi d’été sous les oliviers.
+                </p>
+
+                <p style="margin-top:40px;">
+                    <b>G. de Provence</b>, c’est la beauté telle que cette terre la transmet :
+                    naturelle, vraie, lumineuse, essentielle.
+                </p>
+
+                <p style="font-style: italic; color: var(--lavender); font-size: 1.3rem; margin-top: 50px;">
+                    Le luxe naturel
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section Notre Maison -->
+    <section id="maison">
+        <div class="section-content">
+            <div class="image-section"></div>
+        </div>
+    </section>
+
+    <!-- Section Hôtels de Luxe -->
+    <section id="hotels">
+        <div class="section-content">
+            <h2>Hôtels de Luxe</h2>
+            <div class="centered-text">
+                <p>G. de Provence accompagne les établissements hôteliers d'exception dans la création d'une expérience olfactive et sensorielle unique.</p>
+                <p>Nous proposons une gamme complète de soins et d'amenities qui reflètent l'élégance discrète et le raffinement de votre établissement.</p>
+            </div>
+
+            <!-- <h3 style="text-align: center; margin-top: 60px; color: var(--navy);">Nos Signatures Olfactives</h3> -->
+           
+
+            <div class="cards-grid hotels-cards">
+                <div class="card" id="amenites-chambres">
+                    <h3>Amenities Chambres</h3>
+                    <p>Diffuseurs de parfum et brumes d'ambiance pour les chambres.</p>
+                </div>
+                <div class="card" id="collection-prestige">
+                    <h3>Collection Prestige</h3>
+                    <p>Produits haut de gamme pour suites et établissements d'exception.</p>
+                </div>
+                <div class="card" id="solutions-sur-mesure">
+                    <h3>Co-branding possible</h3>
+                    <p>Créations personnalisées adaptées à l'identité de votre établissement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Spas -->
+    <section id="spas">
+        <div class="section-content">
+            <h2>Spas</h2>
+            <div class="centered-text">
+                <p>Pour les espaces dédiés au bien-être, G. de Provence conçoit des soins inspirés des traditions provençales.</p>
+                <p>Nos formules naturelles et certifiées offrent une expérience sensorielle profonde, alliant efficacité et plaisir des sens.</p>
+            </div>          
+
+            <div class="cards-grid spas-cards">
+                <div class="card" id="soins-corps">
+                    <h3>Soins du Corps</h3>
+                    <p>Huiles de massage et gommage pour des soins complets.</p>
+                </div>
+                <div class="card" id="soins-visage">
+                    <h3>Soins du Visage</h3>
+                    <p>Sublimer la peau avec douceur et efficacité.</p>
+                </div>
+                <div class="card" id="rituels-signature">
+                    <h3>Bougies cabines</h3>
+                    <p>Diffuseurs de parfum pour les espaces ouverts au public.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Signature Lobby -->
+    <section id="signature-lobby">
+        <div class="section-content">
+            <h2 style="text-align: center; margin-top: 60px; color: var(--navy);">Signature pour Lobby Hôtels & Spas</h2>
+
+            <div class="centered-text">
+                <p>Une signature monumentale pour un accueil suspendu dans le temps : laissez la lumière de la Provence sculpter l'atmosphère de votre lobby.</p>
+            </div>
+
+            <div class="cards-grid lobby-cards">
+                <div class="card" id="bougies-ceramique">
+                    <h3>Bougies</h3>
+                    <p>Cire 100% végétale, issue de l'agriculture raisonée, sans pesticides et sans OGM</p>
+                    <p>Parfum concentré à 10%, ogirine Grasse, sans CMR et sans phtalates</p>
+                    <p>Mèche coton avec âme papier</p>
+                </div>
+                <div class="card" id="diffuseurs-parfum">
+                    <h3>Diffuseurs de parfum</h3>
+                    <p>Diffuseurs concentré à 10%, origine Grasse, sans CMR et sans phtalates</p>
+                    <p>Alcool spécial parfum (origine France)</p>
+                    <p>Bâtonnets couleur naturelle</p>
+                </div>
+            </div>
+
+            <div class="centered-text" style="margin-top: 50px;">
+                <p style="font-style: italic; color: var(--lavender);">Chaque création est unique, façonnée pour refléter l'âme de votre lieu.</p>
+            </div>
+
+            <div class="ambiance-block">
+
+                <h3>Nos bougies, diffuseurs de parfum et brumes d'ambiance</h3>
+
+                <p>
+                    Des fragrances façonnées par la lumière pour transformer chaque espace en un santuaire de sérénité.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="coffrets-section">
+        <div class="section-content">
+
+            <div class="coffrets-block">
+
+                <h3>Des coffrets cadeaux pour votre clientèle</h3>
+
+                <p>
+                    Des éclats de Provence réunis dans un écrin : la quintessence de notre territoire à emporter chez soi.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="engagements">
+        <div class="section-content">
+            <h2 style="text-align: center; margin-top: 60px; color: var(--navy);">Nos Engagements</h2>
+            <div class="engagements-list">
+                <div class="engagement-item">
+                    <h3>Origines maîtrisées</h3>
+                    <p>Matières premières exclusivement issues de Provence, cultivées avec respect et passion.</p>
+                </div>
+                <div class="engagement-item">
+                    <h3>Formules propres</h3>
+                    <p>Naturelles, certifiées BIO, transparentes et respectueuses de votre peau.</p>
+                </div>
+                <div class="engagement-item">
+                    <h3>Respect du territoire</h3>
+                    <p>Production locale qui valorise le savoir-faire provençal.</p>
+                </div>
+                <div class="engagement-item">
+                    <h3>Écoresponsabilité</h3>
+                    <p>Packaging recyclé, formules rechargeables, processus maîtrisés.</p>
+                </div>
+                <div class="engagement-item">
+                    <h3>Excellence sensorielle</h3>
+                    <p>Textures douces, parfums authentiques, fabrication soignée.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="propos">
+        <div class="section-content">
+            <h2>À propos</h2>
+            <div class="centered-text">
+                <p><b>G. de Provence</b> est une maison inspirée par la lumière, les paysages et les savoir-faire du Sud. Entre tradition artisanale et exigence contemporaine, nous créons des produits sincères, formulés avec soin et pensés comme une célébration discrète de la beauté naturelle.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section Contact -->
+    <section id="contact">
+        <div class="section-content">
+            <h2>CONTACT</h2>
+
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgoybzzp"
+                method="POST" autocomplete="off">
+                <!-- Paramètres Formspree -->
+                <input type="hidden" name="_subject" value="Nouvelle demande - G. de Provence">
+                <input type="hidden" name="_captcha" value="false">
+			  	<input type="text" name="_gotcha" style="display:none !important">
+
+
+                <!-- Informations personnelles -->
+                <h3>Informations personnelles :</h3>
+                <div class="form-group">
+                    <label for="prenom_nom">Prénom & Nom *</label>
+                    <input type="text" id="prenom_nom" name="prenom_nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone">Numéro de Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone">
+                </div>
+
+                <!-- Profil de votre demande -->
+                <h3>Profil de votre demande :</h3>
+
+                <div class="form-group">
+                    <label for="profil">Vous êtes : *</label>
+                    <select id="profil" name="profil" required>
+                        <option value="">Sélectionnez</option>
+                        <option value="chaine-hoteliere">Chaîne hôtelière</option>
+                        <option value="hotel">Hôtel</option>
+                        <option value="palace">Palace</option>
+                        <option value="resort">Resort</option>
+                        <option value="spa">Spa</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="societe">Nom de votre établissement / Société *</label>
+                    <input type="text" id="societe" name="societe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="zone">Pays / Zone géographique *</label>
+                    <select id="zone" name="zone" required>
+                        <option value="">Sélectionnez</option>
+                        <option value="france">France</option>
+                        <option value="espagne">Espagne</option>
+                        <option value="angleterre">Angleterre</option>
+                        <option value="italie">Italie</option>
+                        <option value="suisse">Suisse</option>
+					  <option value="allemagne">Allemagne</option>
+                    </select>
+                </div>
+
+                <!-- Votre projet -->
+                <h3>Votre projet :</h3>
+
+                <div class="form-group">
+                    <label for="objet">Objet de la demande *</label>
+                    <select id="objet" name="objet" required>
+                        <option value=""><p>Sélectionnez</p></option>
+                        <option value="renseignements">Demande de renseignements</option>
+                        <option value="devis">Demande de devis personnalisé</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">
+                        Votre message – <i>Décrivez-nous votre projet ou vos besoins spécifiques.</i> *
+                    </label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <!-- Consentement RGPD -->
+                <div class="form-group consent-group">
+                    <label for="rgpd" class="consent-label">
+                    <i>En transmettant ce formulaire, vous acceptez que vos données soient utilisées 
+                        pour répondre à votre demande dans le respect de notre politique de confidentialité.</i>
+                    </label>
+                </div>
+
+                <!-- Bouton CTA -->
+                <button type="submit" class="submit-btn">
+                    INITIER L'ÉCHANGE
+                </button>
+
+                <!-- Message de confirmation -->
+                <div class="success-message" id="successMessage">
+                    Nous vous remercions de l'intérêt porté à G. de Provence. 
+                    Votre message a bien été transmis à notre équipe. 
+                    Nous reviendrons vers vous sous 48h pour donner vie à votre projet.
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2026 G. de Provence - Tous droits réservés</p>
+        
+        <p class="footer-links">
+            <a href="mentions.html">Mentions légales & Politique de confidentialité</a>
+        </p>
+
+        <p class="footer-tagline">Le luxe naturel</p>
+    </footer>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>

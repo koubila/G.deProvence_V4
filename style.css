@@ -1,0 +1,753 @@
+ 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lavender: #8B7AA3;
+            --navy: #7a6991; /*#1D252C; */
+            --cream: #F5F2ED;
+            --white: #FFFFFF;
+            --light-lavender: #C4B5D8;
+            --text-dark: #051C2E;/*#2C2C2C;*/
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Abhaya Libre', serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: var(--cream);
+            font-weight: 400;
+        }
+
+
+        /* Nouveau bandeau */
+        .header-banner {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                        url('https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/9f904605-1ba8-44f6-9c95-bb22569c27c3');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .banner-overlay h1 {
+            color: white;
+            font-family: 'Abhaya Libre', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            padding: 0 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            max-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            .banner-overlay h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* .logo-container img {
+            height: 60px;
+            width: auto;
+        } */
+         /* Le conteneur prend toute la hauteur du nav */
+        .logo-container {
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Le logo remplit la hauteur du nav */
+        .logo-container img {
+            height:100px;
+            width: auto;
+            display: block;
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Arial', sans-serif;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--lavender);
+        }
+
+        .nav-links .has-subnav > a::after {
+            content: '▼';
+            font-size: 0.7em;
+            margin-left: 5px;
+            transition: transform 0.3s;
+            color: var(--lavender);
+            opacity: 0.7;
+        }
+        
+        .nav-links .has-subnav:hover > a::after {
+            transform: rotate(180deg);
+            opacity: 1;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--lavender);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .has-subnav {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .subnav {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background-color: var(--white);
+            min-width: 280px;
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .subnav::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 8px 8px 8px;
+            border-style: solid;
+            border-color: transparent transparent var(--white) transparent;
+        }
+
+        .subnav a {
+            text-transform: none;
+            font-size: 1.05rem;
+            color: var(--navy);
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-weight: 400;
+            font-family: 'Abhaya Libre', serif;
+        }
+
+        .subnav a:last-child {
+            border-bottom: none;
+        }
+
+        .subnav a:hover {
+            color: var(--lavender);
+            padding-left: 10px;
+        }
+
+        .has-subnav:hover .subnav {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(15px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--navy);
+            transition: 0.3s;
+        }
+
+        section {
+            min-height: 80vh;
+            padding: 100px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            scroll-margin-top: 120px; 
+        }
+
+        .section-content {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        #accueil {
+            background-color: var(--cream);
+        }
+
+        #maison {
+            background: linear-gradient(180deg, #EDE6F0 0%, #F5F2ED 100%);
+        }
+
+        #hotels {
+            background-color: var(--cream);
+        }
+
+        #spas {
+            background: linear-gradient(180deg, #F0ECE8 0%, #F5F2ED 100%);
+        }
+
+        #signature-lobby {
+            background-color: #EDE6F0;
+        }
+
+        #contact {
+            background-color: var(--cream);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            color: var(--navy);
+            text-align: center;
+        }
+
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            color: var(--navy);
+            text-align: center;
+        }
+
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: var(--lavender);
+        }
+
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .centered-text {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            border-radius: 4px;
+            scroll-margin-top: 130px; 
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--navy);
+        }
+
+        .card p {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .engagements-list {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+
+        .engagement-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: var(--white);
+            border-left: 4px solid var(--lavender);
+        }
+
+        .engagement-item h3 {
+            color: var(--navy);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .engagement-item p {
+            text-align: left;
+        }
+
+        .signatures-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .signature-item {
+            text-align: center;
+            flex: 0 1 250px;
+        }
+
+        .signature-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--lavender);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .signature-name {
+            font-size: 1.3rem;
+            color: var(--navy);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 50px auto;
+            background: var(--white);
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--navy);
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background-color: #FAFAFA;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--lavender);
+            background-color: #FFF;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background: var(--lavender);
+            color: var(--white);
+            padding: 15px 50px;
+            border: none;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            width: 100%;
+            font-family: inherit;
+            border-radius: 2px;
+        }
+
+        .submit-btn:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .success-message {
+            display: none;
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            border-radius: 4px;
+        }
+
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .footer-tagline {
+            font-style: italic;
+            color: var(--light-lavender);
+            margin-top: 15px;
+        }
+
+        .image-section {
+            width: 100%;
+            height: 500px;
+            background-image: url('https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/9de9ef74-879b-4b51-a5f5-85ae5b666b8d');
+            background-size: cover;
+            background-position: center;
+            margin: 60px 0;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 960px) {
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px 40px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                display: none;
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .subnav {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: none;
+                padding-left: 20px;
+                margin-top: 10px;
+                width: 100%;
+                min-width: auto;
+                display: none;
+                border-left: 2px solid var(--lavender);
+                background-color: #fcfcfc;
+            }
+
+            .subnav::before {
+                display: none;
+            }
+            
+            .has-subnav.active .subnav {
+                display: flex;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .logo-container img {
+                height: 60px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .signatures-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* ===== Section À propos ===== */
+
+#propos {
+    background: linear-gradient(180deg, #F5F2ED 0%, #EDE6F0 100%);
+}
+
+#propos .section-content {
+    max-width: 900px;
+}
+
+#propos .centered-text {
+    background: var(--white);
+    padding: 60px 70px;
+    margin-top: 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border-radius: 4px;
+    position: relative;
+}
+
+#propos .centered-text::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--lavender);
+}
+
+#propos p {
+    text-align: center;
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+#propos b {
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.5px;
+}
+/* ===== Bloc Ambiance ===== */
+
+.ambiance-block {
+    text-align: center;
+    margin-top: 80px;
+    padding: 50px 40px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.ambiance-block::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: var(--lavender);
+    margin: 0 auto 30px auto;
+}
+
+.ambiance-block h3 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.ambiance-block p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== Section Coffrets ===== */
+
+.coffrets-section {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.coffrets-block {
+    text-align: center;
+    margin-top: 40px;
+    padding: 60px 50px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--white);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    position: relative;
+}
+
+.coffrets-block::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--lavender);
+    margin: 0 auto 35px auto;
+}
+
+.coffrets-block h3 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.coffrets-block p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto;
+}
+.footer-links a {
+    color: var(--light-lavender);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 0.7;
+}
+
+
+/* Icône à gauche de tous les titres */
+
+h3::before
+ {
+    content: "";
+    display: inline-block;
+    width: 26px;          /* taille icône */
+    height: 26px;
+    background-image: url("./icone_gdeprovence-removebg-preview.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 12px;   /* espace entre icône et texte */
+    vertical-align: middle;
+}
+
+/* Pour bien aligner icône + texte */
+h1, h2, h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* retire si tu veux aligné à gauche */
+    gap: 12px;
+}
+h1::before,
+h2::before,
+h3::before {
+    opacity: 0.8;
+}
+
